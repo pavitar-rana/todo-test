@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 
 const FILTERS = ['All', 'Active', 'Completed']
+const personName = import.meta.env.VITE_PERSON_NAME || 'there'
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -39,6 +40,7 @@ export default function App() {
 
   return (
     <div className="app">
+      <p className="greeting">Hey, {personName}</p>
       <h1>todos</h1>
 
       <form onSubmit={addTodo} className="add-form">
